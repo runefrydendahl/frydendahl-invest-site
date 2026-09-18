@@ -103,6 +103,33 @@ img { max-width: 100%; }
   gap: 12px;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lang-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.36rem 0.62rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+}
+
+.lang-btn.active {
+  color: #031321;
+  background: linear-gradient(135deg, var(--primary), #a0edff);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -676,6 +703,10 @@ img { max-width: 100%; }
   .main-nav,
   .nav-actions {
     display: none;
+  }
+
+  .lang-switch {
+    margin-left: auto;
   }
 
   .hero-grid,
