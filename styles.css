@@ -440,6 +440,81 @@ img { max-width: 100%; }
   color: var(--muted);
 }
 
+.concept-section {
+  padding-top: 40px;
+}
+
+.concept-card {
+  padding: 30px;
+  border-radius: 26px;
+  border: 1px solid rgba(116, 212, 255, 0.24);
+  background:
+    radial-gradient(circle at top right, rgba(116, 212, 255, 0.1), transparent 46%),
+    linear-gradient(180deg, rgba(12, 22, 37, 0.88), rgba(8, 16, 28, 0.92));
+}
+
+.concept-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.concept-head h3 {
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  letter-spacing: -0.04em;
+}
+
+.concept-head p {
+  margin: 0;
+  max-width: 800px;
+  color: var(--muted);
+}
+
+.concept-badge {
+  display: inline-flex;
+  white-space: nowrap;
+  padding: 0.46rem 0.74rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--warning);
+  background: rgba(255, 206, 115, 0.14);
+  border: 1px solid rgba(255, 206, 115, 0.28);
+}
+
+.concept-grid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.concept-grid > div {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px 16px 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.concept-grid strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.concept-grid ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.concept-grid li {
+  margin-bottom: 8px;
+}
+
 .split-layout {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -711,6 +786,7 @@ img { max-width: 100%; }
 
   .hero-grid,
   .split-layout,
+  .concept-grid,
   .feature-grid,
   .pricing-grid,
   .footer-grid,
