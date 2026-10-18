@@ -1,64 +1,37 @@
-# Deploy to Cloudflare Pages with invest.begin.dk
+# Hosting and deployment
 
-This checklist publishes the static site online with low cost and low maintenance.
+The site is hosted on Cloudflare Pages and deploys automatically from GitHub.
 
-## 1) Push this folder to GitHub
+| | |
+|---|---|
+| GitHub repo | `runefrydendahl/frydendahl-invest-site` |
+| Cloudflare Pages project | `frydendahl-invest-site` (`frydendahl-invest-site.pages.dev`) |
+| Primary domain | `frydendahlinvest.com` (also served on `www.frydendahlinvest.com`) |
+| Legacy domain | `invest.begin.dk` |
+| Build settings | Framework preset: None, build command: empty, output directory: `/` |
 
-Run in this folder:
+## Publishing a change
+
+1. Edit the files
+2. Commit and push to `main`
+3. Cloudflare Pages builds and deploys automatically. The result shows as a "Cloudflare Pages" check on the commit in GitHub, with a preview URL.
+
+No local Cloudflare login is needed for this.
+
+## Changing Cloudflare settings
+
+Domains, DNS, redirects and analytics are managed in the Cloudflare dashboard, or from the command line after logging in once:
 
 ```bash
-git init
-git add .
-git commit -m "Initial homepage"
-git branch -M main
-git remote add origin https://github.com/<your-user>/<your-repo>.git
-git push -u origin main
+npx wrangler login
+npx wrangler pages project list
 ```
 
-If the repository already exists, skip `git init` and only commit/push.
+## Checking the live site
 
-## 2) Create a Cloudflare Pages project
+- https://frydendahlinvest.com loads with the latest change
+- Email links point to `rune@begin.dk`
+- https://frydendahlinvest.com/robots.txt and `/sitemap.xml` return the real files
+- An unknown path such as `/does-not-exist` shows the 404 page
 
-1. Open Cloudflare Dashboard
-2. Go to Pages
-3. Create project from GitHub
-4. Select your repository
-5. Build settings:
-   - Framework preset: None
-   - Build command: (empty)
-   - Build output directory: /
-6. Deploy
-
-## 3) Connect custom domain
-
-In Pages project:
-
-1. Open Custom domains
-2. Add `invest.begin.dk`
-
-## 4) DNS record in begin.dk zone
-
-Add this record:
-
-- Type: CNAME
-- Name: invest
-- Target: <your-project>.pages.dev
-
-Cloudflare provisions SSL automatically.
-
-## 5) Verify live site
-
-Check:
-
-- https://invest.begin.dk
-- Page title loads
-- Email link points to rune@begin.dk
-- Main CTA links work
-
-## 6) Ongoing updates
-
-Any future change is:
-
-1. Edit files
-2. Commit and push to GitHub
-3. Cloudflare auto-deploys new version
+Note: Cloudflare's email obfuscation rewrites `mailto:` links on the live page. They still work for visitors.

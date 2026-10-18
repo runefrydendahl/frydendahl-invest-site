@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
       portfolioCheck3Text: 'Det gør det nemmere at drøfte investeringer, familieøkonomi, skat og rådgivning med reel kontekst.',
       portfolioPanelHeader: 'Hvad løser det?',
       portfolioPanelStatus: 'Praktisk',
-      portfolioUse1: 'Overblik over retten investeringer',
+      portfolioUse1: 'Klart porteføljeoverblik',
       portfolioUse1Info: 'Samlet visning af beholdninger',
       portfolioUse2: 'Fordeling og risiko',
       portfolioUse2Info: 'Identifierer koncentration og ubalance',
